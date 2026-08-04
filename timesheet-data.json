@@ -1,0 +1,75 @@
+[
+  {
+    "id": "e001",
+    "type": "evento",
+    "date": "2026-08-26",
+    "description": "Três sessões Incompany presencial em SP, com empresa do prospect Marcos Sanchez, cliente do Vitor Serikawa",
+    "createdAt": 1
+  },
+  {
+    "id": "e002",
+    "type": "evento",
+    "date": "2026-08-17",
+    "description": "Roadshow + Evento para Clientes cidade de Andradas-MG. Presentes Paty Taramelli, Spider, Hegg",
+    "createdAt": 1
+  },
+  {
+    "id": "e003",
+    "type": "evento",
+    "date": "2026-08-14",
+    "description": "Participação Plenária SP2B em São Paulo. Festival de inovação, cultura e empreendedorismo https://sp2b.com.br/programacao?search=saadia",
+    "createdAt": 1
+  },
+  {
+    "id": "e004",
+    "type": "call",
+    "date": "2026-08-07",
+    "clientCode": "",
+    "description": "Roadshow com clientes em Campo Grande + Nicolas Gitti",
+    "createdAt": 1
+  },
+  {
+    "id": "e005",
+    "type": "evento",
+    "date": "2026-08-06",
+    "description": "Campo Grande. Evento com clientes (Hegg, assessora Nicolas Gitti). Apresentação de cenário e recomendações de investimento",
+    "createdAt": 1
+  },
+  {
+    "id": "e006",
+    "type": "evento",
+    "date": "2026-08-04",
+    "description": "Elton Placido (Parceiro Nomos), Webinar para clientes sobre Macrotrading",
+    "createdAt": 1
+  },
+  {
+    "id": "e007",
+    "type": "captacao",
+    "date": "2026-08-03",
+    "description": "Frida Koiffman (332490) Valor 800k Alinhado com assessora Larissa",
+    "createdAt": 3
+  },
+  {
+    "id": "e008",
+    "type": "call",
+    "date": "2026-08-03",
+    "clientCode": "Andre Rocha 225409",
+    "description": "Call de cenário e Alocação",
+    "createdAt": 2
+  },
+  {
+    "id": "e009",
+    "type": "call",
+    "date": "2026-08-03",
+    "clientCode": "Mariana 585461",
+    "description": "Call de cenário e alocação",
+    "createdAt": 1
+  },
+  {
+    "id": "e010",
+    "type": "evento",
+    "date": "2026-09-23",
+    "description": "Roadshow Belo Horizonte",
+    "createdAt": 1
+  }
+]

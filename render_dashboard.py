@@ -1,0 +1,491 @@
+import json
+
+with open('/home/claude/timesheet-data.json', 'r', encoding='utf-8') as f:
+    entries = json.load(f)
+
+entries_json = json.dumps(entries, ensure_ascii=False)
+
+template = r'''<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Relatório de Atividades · Economista Chefe</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root{
+  --bg:#11171A;
+  --surface:#1A2226;
+  --surface-alt:#212B30;
+  --border:#2B3639;
+  --text:#EDEAE2;
+  --muted:#8B989D;
+  --call:#4FD1C5;
+  --evento:#E8B368;
+  --captacao:#E8735A;
+  --imprensa:#8AA9D6;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'IBM Plex Sans',sans-serif;
+  min-height:100vh;
+  padding:28px 20px 60px;
+}
+
+.wrap{max-width:1040px;margin:0 auto;}
+
+.masthead{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  border-bottom:1px solid var(--border);
+  padding-bottom:16px;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+.masthead h1{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:20px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  margin:0;
+  text-transform:uppercase;
+}
+.masthead .sub{
+  color:var(--muted);
+  font-size:12.5px;
+  font-family:'IBM Plex Mono',monospace;
+  margin-top:4px;
+}
+.gen{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  color:var(--muted);
+  text-align:right;
+}
+
+.summary{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  margin-bottom:20px;
+}
+.summary .cell{
+  background:var(--surface);
+  padding:14px 16px;
+}
+.summary .cell .label{
+  font-size:10.5px;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--muted);
+  font-family:'IBM Plex Mono',monospace;
+}
+.summary .cell .value{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:24px;
+  font-weight:600;
+  margin-top:4px;
+}
+.summary .cell.call .value{color:var(--call);}
+.summary .cell.evento .value{color:var(--evento);}
+.summary .cell.captacao .value{color:var(--captacao);}
+.summary .cell.imprensa .value{color:var(--imprensa);}
+
+.panel{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:18px;
+  margin-bottom:20px;
+}
+.panel h2{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--muted);
+  margin:0 0 14px 0;
+  font-weight:600;
+}
+
+.legend{display:flex;gap:18px;margin-bottom:14px;flex-wrap:wrap;}
+.legend .item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);}
+.legend .dot{width:9px;height:9px;border-radius:2px;}
+.chart-area{overflow-x:auto;}
+
+.filters{display:flex;gap:10px;align-items:center;margin-bottom:16px;flex-wrap:wrap;}
+.filters select{
+  background:var(--surface-alt);
+  border:1px solid var(--border);
+  color:var(--text);
+  padding:7px 10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12px;
+  border-radius:3px;
+}
+.filters .count{margin-left:auto;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:11.5px;}
+
+.day-group{margin-bottom:18px;}
+.day-header{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;
+  color:var(--muted);
+  border-bottom:1px solid var(--border);
+  padding-bottom:6px;
+  margin-bottom:10px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+}
+.day-header .n{color:var(--text);font-weight:600;font-size:13.5px;}
+
+.entry{
+  display:flex;
+  gap:12px;
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-left:3px solid var(--border);
+  background:var(--surface-alt);
+  border-radius:3px;
+  margin-bottom:6px;
+  align-items:flex-start;
+}
+.entry.call{border-left-color:var(--call);}
+.entry.evento{border-left-color:var(--evento);}
+.entry.captacao{border-left-color:var(--captacao);}
+.entry.imprensa{border-left-color:var(--imprensa);}
+
+.entry .badge{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  padding:2px 6px;
+  border-radius:2px;
+  white-space:nowrap;
+  height:fit-content;
+}
+.entry.call .badge{background:rgba(79,209,197,0.12);color:var(--call);}
+.entry.evento .badge{background:rgba(232,179,104,0.12);color:var(--evento);}
+.entry.captacao .badge{background:rgba(232,115,90,0.12);color:var(--captacao);}
+.entry.imprensa .badge{background:rgba(138,169,214,0.12);color:var(--imprensa);}
+
+.entry .body{flex:1;min-width:0;}
+.entry .meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:3px;}
+.entry .meta b{color:var(--text);}
+.entry .desc{font-size:13.5px;line-height:1.4;color:var(--text);}
+
+.empty{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:center;padding:30px 0;}
+
+.print-btn{
+  background:none;
+  border:1px solid var(--border);
+  color:var(--muted);
+  padding:7px 14px;
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11.5px;
+  text-transform:uppercase;
+  letter-spacing:0.5px;
+  cursor:pointer;
+  border-radius:3px;
+  margin-top:8px;
+}
+.print-btn:hover{color:var(--text);border-color:var(--text);}
+
+@media print{
+  body{background:#fff;color:#000;padding:0;}
+  .filters, .print-btn{display:none;}
+  .panel, .summary .cell, .entry{background:#fff;border-color:#ccc;}
+}
+
+@media (max-width:640px){
+  .masthead{flex-direction:column;align-items:flex-start;}
+  .gen{text-align:left;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="masthead">
+    <div>
+      <h1>Relatório de Atividades · Economista Chefe</h1>
+      <div class="sub">Consolidado de Calls, Eventos, Captação/Boleta e Imprensa</div>
+    </div>
+    <div>
+      <div class="gen" id="genAt"></div>
+      <button class="print-btn" onclick="window.print()">Imprimir / PDF</button>
+    </div>
+  </div>
+
+  <div class="summary" id="summaryMonth"></div>
+
+  <div class="panel">
+    <h2>Registro Mensal</h2>
+    <div class="legend">
+      <div class="item"><span class="dot" style="background:var(--call);"></span>Call Cliente</div>
+      <div class="item"><span class="dot" style="background:var(--evento);"></span>Evento</div>
+      <div class="item"><span class="dot" style="background:var(--captacao);"></span>Captação/Boleta</div>
+      <div class="item"><span class="dot" style="background:var(--imprensa);"></span>Imprensa</div>
+    </div>
+    <div class="chart-area" id="chart"></div>
+  </div>
+
+  <div class="panel">
+    <h2>Detalhamento</h2>
+    <div class="filters">
+      <select id="filterMonth"></select>
+      <select id="filterType">
+        <option value="all">Todos os tipos</option>
+        <option value="call">Calls Cliente</option>
+        <option value="evento">Eventos</option>
+        <option value="captacao">Captação/Boleta</option>
+        <option value="imprensa">Imprensa</option>
+      </select>
+      <span class="count" id="resultCount"></span>
+    </div>
+    <div id="log"></div>
+  </div>
+
+</div>
+
+<script>
+const entries = __ENTRIES_JSON__;
+const CHART_START_MONTH = '2026-08';
+
+function fmtDateLong(iso){
+  const parts = iso.split('-').map(Number);
+  const y = parts[0], m = parts[1], d = parts[2];
+  const dt = new Date(y, m-1, d);
+  const dias = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  return dias[dt.getDay()]+', '+d+' '+meses[m-1]+' '+y;
+}
+
+function typeLabel(t){
+  if(t === 'call') return 'Call Cliente';
+  if(t === 'evento') return 'Evento';
+  if(t === 'captacao') return 'Captação/Boleta';
+  return 'Imprensa';
+}
+
+function typeColorVar(t){
+  return t === 'call' ? '--call' : t === 'evento' ? '--evento' : t === 'captacao' ? '--captacao' : '--imprensa';
+}
+
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+function renderSummaryMonth(){
+  const now = new Date();
+  const ym = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+  const monthEntries = entries.filter(function(e){ return e.date.startsWith(ym); });
+  const counts = {call:0, evento:0, captacao:0, imprensa:0};
+  monthEntries.forEach(function(e){ counts[e.type]++; });
+  const el = document.getElementById('summaryMonth');
+  el.innerHTML =
+    '<div class="cell call"><div class="label">Calls Cliente (mês)</div><div class="value">'+counts.call+'</div></div>'+
+    '<div class="cell evento"><div class="label">Eventos (mês)</div><div class="value">'+counts.evento+'</div></div>'+
+    '<div class="cell captacao"><div class="label">Captação/Boleta (mês)</div><div class="value">'+counts.captacao+'</div></div>'+
+    '<div class="cell imprensa"><div class="label">Imprensa (mês)</div><div class="value">'+counts.imprensa+'</div></div>';
+}
+
+function monthsFromStart(){
+  const months = [];
+  const startParts = CHART_START_MONTH.split('-').map(Number);
+  let y = startParts[0], m = startParts[1];
+
+  const now = new Date();
+  let endY = now.getFullYear(), endM = now.getMonth()+1;
+
+  entries.forEach(function(e){
+    const p = e.date.split('-').map(Number);
+    if(p[0] > endY || (p[0] === endY && p[1] > endM)){
+      endY = p[0]; endM = p[1];
+    }
+  });
+
+  while(y < endY || (y === endY && m <= endM)){
+    months.push(y+'-'+String(m).padStart(2,'0'));
+    m++;
+    if(m > 12){ m = 1; y++; }
+  }
+  return months;
+}
+
+function niceAxisMax(v){
+  if(v <= 5) return 5;
+  const magnitude = Math.pow(10, Math.floor(Math.log10(v)));
+  const residual = v / magnitude;
+  let niceResidual;
+  if(residual <= 1) niceResidual = 1;
+  else if(residual <= 2) niceResidual = 2;
+  else if(residual <= 5) niceResidual = 5;
+  else niceResidual = 10;
+  return niceResidual * magnitude;
+}
+
+function renderChart(){
+  const months = monthsFromStart();
+  const types = ['call','evento','captacao','imprensa'];
+  const data = months.map(function(m){
+    const row = {month:m, call:0, evento:0, captacao:0, imprensa:0};
+    entries.filter(function(e){ return e.date.startsWith(m); }).forEach(function(e){ row[e.type]++; });
+    return row;
+  });
+
+  const rawMax = Math.max.apply(null, [1].concat(data.reduce(function(acc,r){ return acc.concat(types.map(function(t){ return r[t]; })); },[])));
+  const axisMax = niceAxisMax(rawMax);
+  const barW = 14, gap = 4, groupGap = 26, chartH = 160, leftPad = 40, topPad = 10, labelPad = 16;
+  const drawH = chartH - labelPad;
+  const groupW = types.length*(barW+gap) + groupGap;
+  const width = leftPad + data.length*groupW + 20;
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+
+  let svg = '<svg width="'+width+'" height="'+(chartH+50)+'" viewBox="0 0 '+width+' '+(chartH+50)+'" xmlns="http://www.w3.org/2000/svg">';
+
+  for(let g=0; g<=4; g++){
+    const y = topPad + labelPad + drawH - (drawH*g/4);
+    svg += '<line x1="'+(leftPad-6)+'" y1="'+y+'" x2="'+(width-10)+'" y2="'+y+'" stroke="var(--border)" stroke-width="1"/>';
+    svg += '<text x="'+(leftPad-12)+'" y="'+(y+4)+'" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="var(--muted)" text-anchor="end">'+Math.round(axisMax*g/4)+'</text>';
+  }
+
+  data.forEach(function(row, gi){
+    const gx = leftPad + gi*groupW + groupGap/2;
+    types.forEach(function(t, ti){
+      const val = row[t];
+      const h = (val/axisMax)*drawH;
+      const x = gx + ti*(barW+gap);
+      const y = topPad + labelPad + drawH - h;
+      svg += '<rect x="'+x+'" y="'+y+'" width="'+barW+'" height="'+h+'" fill="var('+typeColorVar(t)+')" rx="1.5"/>';
+      if(val>0){
+        svg += '<text x="'+(x+barW/2)+'" y="'+(y-4)+'" font-family="IBM Plex Mono, monospace" font-size="9.5" fill="var(--muted)" text-anchor="middle">'+val+'</text>';
+      }
+    });
+    const parts = row.month.split('-'); const yy = parts[0]; const mm = parts[1];
+    svg += '<text x="'+(gx + (types.length*(barW+gap))/2 - gap/2)+'" y="'+(topPad+chartH+18)+'" font-family="IBM Plex Mono, monospace" font-size="10.5" fill="var(--text)" text-anchor="middle">'+meses[Number(mm)-1]+'/'+yy.slice(2)+'</text>';
+  });
+
+  svg += '</svg>';
+  document.getElementById('chart').innerHTML = svg;
+}
+
+function getMonthOptions(){
+  const set = new Set(entries.map(function(e){ return e.date.slice(0,7); }));
+  const now = new Date();
+  const currentYm = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+  set.add(currentYm);
+  return Array.from(set).sort().reverse();
+}
+
+function renderMonthFilter(){
+  const sel = document.getElementById('filterMonth');
+  const prev = sel.value;
+  const months = getMonthOptions();
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  sel.innerHTML = '<option value="all">Todos os meses</option>' + months.map(function(m){
+    const parts = m.split('-'); const y = parts[0]; const mm = parts[1];
+    return '<option value="'+m+'">'+meses[Number(mm)-1]+' '+y+'</option>';
+  }).join('');
+  if(prev && Array.from(sel.options).some(function(o){ return o.value===prev; })){
+    sel.value = prev;
+  } else {
+    const now = new Date();
+    const currentYm = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+    sel.value = currentYm;
+  }
+}
+
+function renderLog(){
+  const monthFilter = document.getElementById('filterMonth').value;
+  const typeFilter = document.getElementById('filterType').value;
+
+  let filtered = entries.filter(function(e){
+    if(monthFilter !== 'all' && !e.date.startsWith(monthFilter)) return false;
+    if(typeFilter !== 'all' && e.type !== typeFilter) return false;
+    return true;
+  });
+
+  document.getElementById('resultCount').textContent = filtered.length + ' registro(s)';
+
+  const logEl = document.getElementById('log');
+  if(filtered.length === 0){
+    logEl.innerHTML = '<div class="empty">Nenhum registro para este filtro.</div>';
+    return;
+  }
+
+  const byDate = {};
+  filtered.forEach(function(e){
+    if(!byDate[e.date]) byDate[e.date] = [];
+    byDate[e.date].push(e);
+  });
+
+  const dates = Object.keys(byDate).sort().reverse();
+  logEl.innerHTML = '';
+
+  dates.forEach(function(date){
+    const group = document.createElement('div');
+    group.className = 'day-group';
+    const items = byDate[date].sort(function(a,b){ return (b.createdAt||0)-(a.createdAt||0); });
+    group.innerHTML = '<div class="day-header"><span class="n">'+fmtDateLong(date)+'</span><span>'+items.length+' registro(s)</span></div>';
+
+    items.forEach(function(e){
+      const entryDiv = document.createElement('div');
+      entryDiv.className = 'entry ' + e.type;
+      let metaHtml = '';
+      if(e.type === 'call'){
+        metaHtml = '<b>'+(e.clientCode || 'sem código')+'</b>';
+      }
+      entryDiv.innerHTML =
+        '<span class="badge">'+typeLabel(e.type)+'</span>'+
+        '<div class="body">'+
+          (metaHtml ? '<div class="meta">'+metaHtml+'</div>' : '')+
+          '<div class="desc">'+(e.description ? escapeHtml(e.description) : '<span style="color:var(--muted)">sem observação</span>')+'</div>'+
+        '</div>';
+      group.appendChild(entryDiv);
+    });
+
+    logEl.appendChild(group);
+  });
+}
+
+function stampGeneratedAt(){
+  const now = new Date();
+  const dias = ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];
+  const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const dateStr = dias[now.getDay()]+', '+now.getDate()+' '+meses[now.getMonth()]+' '+now.getFullYear();
+  const timeStr = String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+  document.getElementById('genAt').textContent = 'Gerado em '+dateStr+' às '+timeStr;
+}
+
+document.getElementById('filterMonth').addEventListener('change', renderLog);
+document.getElementById('filterType').addEventListener('change', renderLog);
+
+stampGeneratedAt();
+renderSummaryMonth();
+renderChart();
+renderMonthFilter();
+renderLog();
+</script>
+</body>
+</html>
+'''
+
+output = template.replace('__ENTRIES_JSON__', entries_json)
+
+with open('/mnt/user-data/outputs/timesheet-economista-chefe.html', 'w', encoding='utf-8') as f:
+    f.write(output)
+
+print('OK, entries:', len(entries))
