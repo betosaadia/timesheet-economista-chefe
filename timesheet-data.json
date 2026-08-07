@@ -78,5 +78,13 @@
     "date": "2026-08-04",
     "description": "Denise Abarca, Agência Estados. Tema do movimento de juros e previsão para o Copom",
     "createdAt": 1
+  },
+  {
+    "id": "e012",
+    "type": "call",
+    "date": "2026-08-07",
+    "clientCode": "",
+    "description": "15h30 Leticia e Belgival. Clientes do evento Campo Grande. Com Marquinhos e assessor Nicolas Gitti",
+    "createdAt": 2
   }
 ]
