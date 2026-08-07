@@ -124,7 +124,8 @@ body{
 }
 
 .legend{display:flex;gap:18px;margin-bottom:14px;flex-wrap:wrap;}
-.legend .item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);}
+.legend .item{display:flex;align-items:center;gap:6px;font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);transition:opacity .15s ease;}
+.legend .item.dim{opacity:0.35;}
 .legend .dot{width:9px;height:9px;border-radius:2px;}
 .chart-area{overflow-x:auto;}
 
@@ -239,11 +240,11 @@ body{
 
   <div class="panel">
     <h2>Registro Mensal</h2>
-    <div class="legend">
-      <div class="item"><span class="dot" style="background:var(--call);"></span>Call Cliente</div>
-      <div class="item"><span class="dot" style="background:var(--evento);"></span>Evento</div>
-      <div class="item"><span class="dot" style="background:var(--captacao);"></span>Captação/Boleta</div>
-      <div class="item"><span class="dot" style="background:var(--imprensa);"></span>Imprensa</div>
+    <div class="legend" id="chartLegend">
+      <div class="item" data-type="call"><span class="dot" style="background:var(--call);"></span>Call Cliente</div>
+      <div class="item" data-type="evento"><span class="dot" style="background:var(--evento);"></span>Evento</div>
+      <div class="item" data-type="captacao"><span class="dot" style="background:var(--captacao);"></span>Captação/Boleta</div>
+      <div class="item" data-type="imprensa"><span class="dot" style="background:var(--imprensa);"></span>Imprensa</div>
     </div>
     <div class="chart-area" id="chart"></div>
   </div>
@@ -348,7 +349,9 @@ function niceAxisMax(v){
 
 function renderChart(){
   const months = monthsFromStart();
-  const types = ['call','evento','captacao','imprensa'];
+  const typeFilter = document.getElementById('filterType').value;
+  const allTypes = ['call','evento','captacao','imprensa'];
+  const types = typeFilter === 'all' ? allTypes : [typeFilter];
   const data = months.map(function(m){
     const row = {month:m, call:0, evento:0, captacao:0, imprensa:0};
     entries.filter(function(e){ return e.date.startsWith(m); }).forEach(function(e){ row[e.type]++; });
@@ -389,6 +392,11 @@ function renderChart(){
 
   svg += '</svg>';
   document.getElementById('chart').innerHTML = svg;
+
+  document.querySelectorAll('#chartLegend .item').forEach(function(item){
+    const t = item.getAttribute('data-type');
+    item.classList.toggle('dim', typeFilter !== 'all' && t !== typeFilter);
+  });
 }
 
 function getMonthOptions(){
@@ -482,6 +490,7 @@ function stampGeneratedAt(){
 document.getElementById('filterMonth').addEventListener('change', renderLog);
 document.getElementById('filterType').addEventListener('change', function(){
   renderSummaryMonth();
+  renderChart();
   renderLog();
 });
 
@@ -492,6 +501,7 @@ document.getElementById('summaryMonth').addEventListener('click', function(e){
   const sel = document.getElementById('filterType');
   sel.value = (sel.value === type) ? 'all' : type;
   renderSummaryMonth();
+  renderChart();
   renderLog();
 });
 
