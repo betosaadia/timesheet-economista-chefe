@@ -80,7 +80,15 @@ body{
 .summary .cell{
   background:var(--surface);
   padding:14px 16px;
+  cursor:pointer;
+  transition:background .15s ease;
 }
+.summary .cell:hover{background:var(--surface-alt);}
+.summary .cell.selected{background:var(--surface-alt);}
+.summary .cell.call.selected{box-shadow:inset 0 -3px 0 0 var(--call);}
+.summary .cell.evento.selected{box-shadow:inset 0 -3px 0 0 var(--evento);}
+.summary .cell.captacao.selected{box-shadow:inset 0 -3px 0 0 var(--captacao);}
+.summary .cell.imprensa.selected{box-shadow:inset 0 -3px 0 0 var(--imprensa);}
 .summary .cell .label{
   font-size:10.5px;
   text-transform:uppercase;
@@ -294,12 +302,13 @@ function renderSummaryMonth(){
   const monthEntries = entries.filter(function(e){ return e.date.startsWith(ym); });
   const counts = {call:0, evento:0, captacao:0, imprensa:0};
   monthEntries.forEach(function(e){ counts[e.type]++; });
+  const currentFilter = document.getElementById('filterType').value;
   const el = document.getElementById('summaryMonth');
   el.innerHTML =
-    '<div class="cell call"><div class="label">Calls Cliente (mês)</div><div class="value">'+counts.call+'</div></div>'+
-    '<div class="cell evento"><div class="label">Eventos (mês)</div><div class="value">'+counts.evento+'</div></div>'+
-    '<div class="cell captacao"><div class="label">Captação/Boleta (mês)</div><div class="value">'+counts.captacao+'</div></div>'+
-    '<div class="cell imprensa"><div class="label">Imprensa (mês)</div><div class="value">'+counts.imprensa+'</div></div>';
+    '<div class="cell call'+(currentFilter==='call'?' selected':'')+'" data-type="call"><div class="label">Calls Cliente (mês)</div><div class="value">'+counts.call+'</div></div>'+
+    '<div class="cell evento'+(currentFilter==='evento'?' selected':'')+'" data-type="evento"><div class="label">Eventos (mês)</div><div class="value">'+counts.evento+'</div></div>'+
+    '<div class="cell captacao'+(currentFilter==='captacao'?' selected':'')+'" data-type="captacao"><div class="label">Captação/Boleta (mês)</div><div class="value">'+counts.captacao+'</div></div>'+
+    '<div class="cell imprensa'+(currentFilter==='imprensa'?' selected':'')+'" data-type="imprensa"><div class="label">Imprensa (mês)</div><div class="value">'+counts.imprensa+'</div></div>';
 }
 
 function monthsFromStart(){
@@ -471,7 +480,20 @@ function stampGeneratedAt(){
 }
 
 document.getElementById('filterMonth').addEventListener('change', renderLog);
-document.getElementById('filterType').addEventListener('change', renderLog);
+document.getElementById('filterType').addEventListener('change', function(){
+  renderSummaryMonth();
+  renderLog();
+});
+
+document.getElementById('summaryMonth').addEventListener('click', function(e){
+  const cell = e.target.closest('.cell');
+  if(!cell) return;
+  const type = cell.getAttribute('data-type');
+  const sel = document.getElementById('filterType');
+  sel.value = (sel.value === type) ? 'all' : type;
+  renderSummaryMonth();
+  renderLog();
+});
 
 stampGeneratedAt();
 renderSummaryMonth();
