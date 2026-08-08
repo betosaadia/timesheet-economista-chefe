@@ -172,6 +172,15 @@ body{
 .entry.captacao{border-left-color:var(--captacao);}
 .entry.imprensa{border-left-color:var(--imprensa);}
 
+.entry .num{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:11px;
+  color:var(--muted);
+  white-space:nowrap;
+  height:fit-content;
+  padding-top:1px;
+}
+
 .entry .badge{
   font-family:'IBM Plex Mono',monospace;
   font-size:10px;
@@ -417,9 +426,20 @@ function renderMonthFilter(){
   }
 }
 
+function computeEntryNumbers(){
+  const sorted = entries.slice().sort(function(a,b){
+    if(a.date !== b.date) return a.date < b.date ? -1 : 1;
+    return (a.createdAt||0) - (b.createdAt||0);
+  });
+  const map = {};
+  sorted.forEach(function(e, i){ map[e.id] = i+1; });
+  return map;
+}
+
 function renderLog(){
   const monthFilter = document.getElementById('filterMonth').value;
   const typeFilter = document.getElementById('filterType').value;
+  const numberMap = computeEntryNumbers();
 
   let filtered = entries.filter(function(e){
     if(monthFilter !== 'all' && !e.date.startsWith(monthFilter)) return false;
@@ -458,6 +478,7 @@ function renderLog(){
         metaHtml = '<b>'+(e.clientCode || 'sem código')+'</b>';
       }
       entryDiv.innerHTML =
+        '<span class="num">#'+numberMap[e.id]+'</span>'+
         '<span class="badge">'+typeLabel(e.type)+'</span>'+
         '<div class="body">'+
           (metaHtml ? '<div class="meta">'+metaHtml+'</div>' : '')+
