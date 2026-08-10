@@ -86,5 +86,12 @@
     "clientCode": "",
     "description": "15h30 Leticia e Belgival. Clientes do evento Campo Grande. Com Marquinhos e assessor Nicolas Gitti",
     "createdAt": 2
+  },
+  {
+    "id": "e013",
+    "type": "imprensa",
+    "date": "2026-08-04",
+    "description": "Entrevista Infomoney, telefone. https://www.infomoney.com.br/mercados/percepcao-de-risco-eleitoral-pesa-e-taxas-de-juros-sobem-apesar-de-bom-humor-externo/",
+    "createdAt": 2
   }
 ]
