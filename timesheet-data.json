@@ -108,5 +108,13 @@
     "clientCode": "Lenise Velmovitsky (414484) e família",
     "description": "10h. AUC 8MM, revisão de carteira e explicação da performance",
     "createdAt": 1
+  },
+  {
+    "id": "e016",
+    "type": "call",
+    "date": "2026-08-12",
+    "clientCode": "Ruth Goldberg (287788)",
+    "description": "AUC 12MM. Presencial em SP. Revisão de carteira e explicação da performance",
+    "createdAt": 2
   }
 ]
