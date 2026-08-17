@@ -116,5 +116,12 @@
     "clientCode": "Ruth Goldberg (287788)",
     "description": "17h. AUC 12MM. Presencial em SP. Revisão de carteira e explicação da performance",
     "createdAt": 2
+  },
+  {
+    "id": "e017",
+    "type": "imprensa",
+    "date": "2026-08-13",
+    "description": "21h28. Mercados NOMOS/BETO SAADIA, SIDERURGIA, PAPEL E ETANOL NA BOLSA DEVEM REAGIR À MEDIDA SOBRE RECIPROCIDADE",
+    "createdAt": 3
   }
 ]
