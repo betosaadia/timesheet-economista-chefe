@@ -123,5 +123,40 @@
     "date": "2026-08-13",
     "description": "21h28. Mercados NOMOS/BETO SAADIA, SIDERURGIA, PAPEL E ETANOL NA BOLSA DEVEM REAGIR À MEDIDA SOBRE RECIPROCIDADE",
     "createdAt": 3
+  },
+  {
+    "id": "e018",
+    "type": "imprensa",
+    "date": "2026-08-19",
+    "description": "Bolsa cai pela 11ª sessão com cenário de crédito no radar, CNN",
+    "createdAt": 1
+  },
+  {
+    "id": "e019",
+    "type": "imprensa",
+    "date": "2026-08-20",
+    "description": "Entrevista Money Times, Ibovespa avança 1% na máxima, enquanto Wall Street cai",
+    "createdAt": 1
+  },
+  {
+    "id": "e020",
+    "type": "imprensa",
+    "date": "2026-08-20",
+    "description": "Entrevista Telejornal BM&C News",
+    "createdAt": 2
+  },
+  {
+    "id": "e021",
+    "type": "imprensa",
+    "date": "2026-08-21",
+    "description": "Entrevista Exame sobre IPO Shein",
+    "createdAt": 1
+  },
+  {
+    "id": "e022",
+    "type": "imprensa",
+    "date": "2026-08-20",
+    "description": "Entrevista Money Times sobre a alta do Ibovespa",
+    "createdAt": 3
   }
 ]
