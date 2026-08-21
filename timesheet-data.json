@@ -158,5 +158,13 @@
     "date": "2026-08-20",
     "description": "Entrevista Money Times sobre a alta do Ibovespa",
     "createdAt": 3
+  },
+  {
+    "id": "e023",
+    "type": "call",
+    "date": "2026-08-17",
+    "clientCode": "Matias (Assessora Lari)",
+    "description": "Reunião com cliente. AUC 1MM",
+    "createdAt": 2
   }
 ]
