@@ -166,5 +166,12 @@
     "clientCode": "Matias (Assessora Lari)",
     "description": "Reunião com cliente. AUC 1MM",
     "createdAt": 2
+  },
+  {
+    "id": "e024",
+    "type": "imprensa",
+    "date": "2026-08-21",
+    "description": "Entrevista Caroline Aragaki, Broadcast. Cenário de juros intraday",
+    "createdAt": 2
   }
 ]
