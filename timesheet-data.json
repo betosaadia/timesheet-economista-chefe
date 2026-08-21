@@ -173,5 +173,12 @@
     "date": "2026-08-21",
     "description": "Entrevista Caroline Aragaki, Broadcast. Cenário de juros intraday",
     "createdAt": 2
+  },
+  {
+    "id": "e025",
+    "type": "captacao",
+    "date": "2026-08-21",
+    "description": "João Meira. Cliente novo, 180 mil",
+    "createdAt": 3
   }
 ]
