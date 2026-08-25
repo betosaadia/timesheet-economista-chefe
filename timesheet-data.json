@@ -180,5 +180,19 @@
     "date": "2026-08-21",
     "description": "João Meira. Cliente novo, 180 mil",
     "createdAt": 3
+  },
+  {
+    "id": "e026",
+    "type": "captacao",
+    "date": "2026-08-21",
+    "description": "172 mil para David Rembitschevitz no Braza Bank",
+    "createdAt": 4
+  },
+  {
+    "id": "e027",
+    "type": "captacao",
+    "date": "2026-08-21",
+    "description": "880 mil para Daniel Rembitschevitz no Braza Bank",
+    "createdAt": 5
   }
 ]
