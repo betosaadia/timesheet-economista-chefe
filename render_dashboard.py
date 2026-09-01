@@ -202,8 +202,8 @@ body{
 .entry .desc{font-size:13.5px;line-height:1.4;color:var(--text);}
 
 .entry .thumb{
-  width:64px;
-  height:64px;
+  width:128px;
+  height:128px;
   object-fit:cover;
   border-radius:3px;
   border:1px solid var(--border);
