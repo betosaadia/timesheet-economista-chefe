@@ -202,5 +202,13 @@
     "date": "2026-08-25",
     "description": "O Globo. IPCA-15 será divulgado nesta quarta, o que esperar da prévia de agosto",
     "createdAt": 1
+  },
+  {
+    "id": "e029",
+    "type": "imprensa",
+    "date": "2026-08-31",
+    "description": "Entrevistado da semana no painel Global Wallet da BM&C",
+    "image": "assets/global-wallet-bmc.png",
+    "createdAt": 1
   }
 ]
