@@ -201,6 +201,16 @@ body{
 .entry .meta b{color:var(--text);}
 .entry .desc{font-size:13.5px;line-height:1.4;color:var(--text);}
 
+.entry .thumb{
+  width:64px;
+  height:64px;
+  object-fit:cover;
+  border-radius:3px;
+  border:1px solid var(--border);
+  flex-shrink:0;
+  cursor:pointer;
+}
+
 .empty{color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:12.5px;text-align:center;padding:30px 0;}
 
 @media print{
@@ -467,7 +477,8 @@ function renderLog(){
         '<div class="body">'+
           (metaHtml ? '<div class="meta">'+metaHtml+'</div>' : '')+
           '<div class="desc">'+(e.description ? escapeHtml(e.description) : '<span style="color:var(--muted)">sem observação</span>')+'</div>'+
-        '</div>';
+        '</div>'+
+        (e.image ? '<img class="thumb" src="'+e.image+'" alt="" onclick="window.open(this.src, \'_blank\')">' : '');
       group.appendChild(entryDiv);
     });
 

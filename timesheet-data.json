@@ -4,7 +4,8 @@
     "type": "evento",
     "date": "2026-08-26",
     "description": "Seis sessões Incompany presencial em SP (Diadema). Com a empresa do prospect Marcos Sanchez (Caldex), organizado pelo Vitor Serikawa",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/incompany-sp-diadema.png"
   },
   {
     "id": "e002",
