@@ -201,6 +201,7 @@ body{
 .entry .meta b{color:var(--text);}
 .entry .desc{font-size:13.5px;line-height:1.4;color:var(--text);}
 
+.entry .thumbs{display:flex;gap:6px;flex-shrink:0;}
 .entry .thumb{
   width:128px;
   height:128px;
@@ -471,6 +472,14 @@ function renderLog(){
       if(e.type === 'call'){
         metaHtml = '<b>'+(e.clientCode || 'sem código')+'</b>';
       }
+      let imagesHtml = '';
+      const imgs = e.images || (e.image ? [e.image] : []);
+      if(imgs.length){
+        imagesHtml = '<div class="thumbs">' + imgs.map(function(src){
+          return '<img class="thumb" src="'+src+'" alt="" onclick="window.open(this.src, \'_blank\')">';
+        }).join('') + '</div>';
+      }
+
       entryDiv.innerHTML =
         '<span class="num">#'+numberMap[e.id]+'</span>'+
         '<span class="badge">'+typeLabel(e.type)+'</span>'+
@@ -478,7 +487,7 @@ function renderLog(){
           (metaHtml ? '<div class="meta">'+metaHtml+'</div>' : '')+
           '<div class="desc">'+(e.description ? escapeHtml(e.description) : '<span style="color:var(--muted)">sem observação</span>')+'</div>'+
         '</div>'+
-        (e.image ? '<img class="thumb" src="'+e.image+'" alt="" onclick="window.open(this.src, \'_blank\')">' : '');
+        imagesHtml;
       group.appendChild(entryDiv);
     });
 

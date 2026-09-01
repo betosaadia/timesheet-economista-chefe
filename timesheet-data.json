@@ -19,7 +19,11 @@
     "type": "evento",
     "date": "2026-08-14",
     "description": "Participação Plenária SP2B em São Paulo. Festival de inovação, cultura e empreendedorismo https://sp2b.com.br/programacao?search=saadia",
-    "createdAt": 1
+    "createdAt": 1,
+    "images": [
+      "assets/sp2b-programacao.png",
+      "assets/sp2b-palco.png"
+    ]
   },
   {
     "id": "e004",
