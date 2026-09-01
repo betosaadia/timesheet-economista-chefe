@@ -100,7 +100,8 @@
     "type": "imprensa",
     "date": "2026-08-11",
     "description": "Globo (televisão), Jornal Hoje e desdobramento GloboNews",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/globo-jornal-hoje.png"
   },
   {
     "id": "e015",
