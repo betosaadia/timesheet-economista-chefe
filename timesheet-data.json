@@ -209,7 +209,8 @@
     "type": "imprensa",
     "date": "2026-08-25",
     "description": "O Globo. IPCA-15 será divulgado nesta quarta, o que esperar da prévia de agosto",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/oglobo-ipca15.png"
   },
   {
     "id": "e029",
