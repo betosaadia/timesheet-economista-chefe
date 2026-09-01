@@ -301,8 +301,7 @@ function escapeHtml(str){
 }
 
 function renderSummaryMonth(){
-  const now = new Date();
-  const ym = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+  const ym = DEFAULT_MONTH;
   const monthEntries = entries.filter(function(e){ return e.date.startsWith(ym); });
   const counts = {call:0, evento:0, captacao:0, imprensa:0};
   monthEntries.forEach(function(e){ counts[e.type]++; });
@@ -403,6 +402,8 @@ function getMonthOptions(){
   return Array.from(set).sort().reverse();
 }
 
+const DEFAULT_MONTH = '2026-08';
+
 function renderMonthFilter(){
   const sel = document.getElementById('filterMonth');
   const prev = sel.value;
@@ -415,9 +416,7 @@ function renderMonthFilter(){
   if(prev && Array.from(sel.options).some(function(o){ return o.value===prev; })){
     sel.value = prev;
   } else {
-    const now = new Date();
-    const currentYm = now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
-    sel.value = currentYm;
+    sel.value = DEFAULT_MONTH;
   }
 }
 
