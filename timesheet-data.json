@@ -71,13 +71,6 @@
     "createdAt": 1
   },
   {
-    "id": "e010",
-    "type": "evento",
-    "date": "2026-09-23",
-    "description": "Roadshow Belo Horizonte",
-    "createdAt": 1
-  },
-  {
     "id": "e011",
     "type": "imprensa",
     "date": "2026-08-04",

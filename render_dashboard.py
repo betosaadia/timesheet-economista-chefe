@@ -360,10 +360,10 @@ function renderChart(){
 
   const rawMax = Math.max.apply(null, [1].concat(data.reduce(function(acc,r){ return acc.concat(types.map(function(t){ return r[t]; })); },[])));
   const axisMax = niceAxisMax(rawMax);
-  const barW = 14, gap = 4, groupGap = 26, chartH = 160, leftPad = 40, topPad = 10, labelPad = 16;
+  const barW = 14, gap = 4, groupGap = 42, chartH = 160, leftPad = 40, topPad = 10, labelPad = 16;
   const drawH = chartH - labelPad;
   const groupW = types.length*(barW+gap) + groupGap;
-  const width = leftPad + data.length*groupW + 20;
+  const width = leftPad + data.length*groupW + 60;
   const meses = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
 
   let svg = '<svg width="'+width+'" height="'+(chartH+50)+'" viewBox="0 0 '+width+' '+(chartH+50)+'" xmlns="http://www.w3.org/2000/svg">';
