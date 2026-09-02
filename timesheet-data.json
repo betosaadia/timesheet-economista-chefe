@@ -12,7 +12,11 @@
     "type": "evento",
     "date": "2026-08-17",
     "description": "Roadshow + Evento para Clientes cidade de Andradas-MG. Presentes Paty Taramelli, Spider, Hegg",
-    "createdAt": 1
+    "createdAt": 1,
+    "images": [
+      "assets/andradas-apresentacao.png",
+      "assets/andradas-confraternizacao.png"
+    ]
   },
   {
     "id": "e003",
