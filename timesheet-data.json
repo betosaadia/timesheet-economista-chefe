@@ -45,7 +45,8 @@
     "type": "evento",
     "date": "2026-08-04",
     "description": "Elton Placido (Parceiro Nomos), Webinar para clientes sobre Macrotrading",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/webinar-macrotrading.png"
   },
   {
     "id": "e007",
