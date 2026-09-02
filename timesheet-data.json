@@ -42,7 +42,8 @@
     "type": "evento",
     "date": "2026-08-06",
     "description": "Campo Grande. Evento com clientes (Hegg, assessora Nicolas Gitti). Apresentação de cenário e recomendações de investimento",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/campo-grande-apresentacao.png"
   },
   {
     "id": "e006",
