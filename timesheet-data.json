@@ -226,5 +226,13 @@
     "description": "Entrevista Telejornal BM&C",
     "image": "assets/bmc-news-telejornal.png",
     "createdAt": 1
+  },
+  {
+    "id": "e031",
+    "type": "call",
+    "date": "2026-09-09",
+    "clientCode": "Daniele Vitalino (6416580) e Cesar Cerqueira (9016653)",
+    "description": "",
+    "createdAt": 1
   }
 ]
