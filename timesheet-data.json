@@ -234,5 +234,13 @@
     "clientCode": "Daniele Vitalino (6416580) e Cesar Cerqueira (9016653)",
     "description": "",
     "createdAt": 1
+  },
+  {
+    "id": "e032",
+    "type": "imprensa",
+    "date": "2026-09-09",
+    "description": "Jornal Hoje e reprises. Comentando PMS (serviços)",
+    "image": "assets/jornal-hoje-pms.png",
+    "createdAt": 2
   }
 ]
