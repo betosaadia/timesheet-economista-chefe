@@ -230,7 +230,7 @@
   {
     "id": "e031",
     "type": "call",
-    "date": "2026-09-09",
+    "date": "2026-09-15",
     "clientCode": "Daniele Vitalino (6416580) e Cesar Cerqueira (9016653)",
     "description": "",
     "createdAt": 1
@@ -238,9 +238,17 @@
   {
     "id": "e032",
     "type": "imprensa",
-    "date": "2026-09-09",
+    "date": "2026-09-15",
     "description": "Jornal Hoje e reprises. Comentando PMS (serviços)",
     "image": "assets/jornal-hoje-pms.png",
     "createdAt": 2
+  },
+  {
+    "id": "e033",
+    "type": "call",
+    "date": "2026-09-11",
+    "clientCode": "4520817 e 3529065 (PJ)",
+    "description": "Online. Assessor Sodre",
+    "createdAt": 1
   }
 ]
