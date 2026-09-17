@@ -250,5 +250,54 @@
     "clientCode": "4520817 e 3529065 (PJ)",
     "description": "Online. Assessor Sodre",
     "createdAt": 1
+  },
+  {
+    "id": "e034",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "O Globo, Copom. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qWTVOVEE1SmpNek5URT0=",
+    "createdAt": 1
+  },
+  {
+    "id": "e035",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "Infomoney, Copom. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qY3dORGc0SmpNek5URT0=",
+    "createdAt": 2
+  },
+  {
+    "id": "e036",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "Metrópoles, Copom. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qY3dOVFF5SmpNek5URT0=",
+    "createdAt": 3
+  },
+  {
+    "id": "e037",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "O Globo, FED. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qWTBNakUwSmpNek5URT0=&id=124664214",
+    "createdAt": 4
+  },
+  {
+    "id": "e038",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "Money Times, FED. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qWTBNakF3SmpNek5URT0=",
+    "createdAt": 5
+  },
+  {
+    "id": "e039",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "Infomoney, Expectativas. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qZ3lNalk1SmpNek5URT0=&id=124682269",
+    "createdAt": 6
+  },
+  {
+    "id": "e040",
+    "type": "imprensa",
+    "date": "2026-09-14",
+    "description": "Space Money, FED e Copom. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qZ3lOell3SmpNek5URT0=",
+    "createdAt": 7
   }
 ]
