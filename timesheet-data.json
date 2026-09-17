@@ -299,5 +299,13 @@
     "date": "2026-09-14",
     "description": "Space Money, FED e Copom. https://monitoring.knewin.com/front/noticia/?k=TVRJME5qZ3lOell3SmpNek5URT0=",
     "createdAt": 7
+  },
+  {
+    "id": "e041",
+    "type": "imprensa",
+    "date": "2026-09-15",
+    "description": "Entrevista CNBC Brasil, Federal Reserve aumenta juros após 3 anos",
+    "image": "assets/cnbc-fed-alta-juros.png",
+    "createdAt": 3
   }
 ]
