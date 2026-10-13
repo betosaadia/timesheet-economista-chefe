@@ -429,5 +429,13 @@
     "date": "2026-11-05",
     "description": "Palestra Macro + Marcus Miranda. Vinícola Arpuro, em Uberaba-MG",
     "createdAt": 1
+  },
+  {
+    "id": "e058",
+    "type": "call",
+    "date": "2026-10-15",
+    "clientCode": "Ruth Goldberg (287788) + Marcus Miranda",
+    "description": "",
+    "createdAt": 1
   }
 ]
