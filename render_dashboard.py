@@ -244,7 +244,7 @@ body{
   <div class="panel">
     <h2>Registro Mensal</h2>
     <div class="legend" id="chartLegend">
-      <div class="item" data-type="call"><span class="dot" style="background:var(--call);"></span>Call Cliente</div>
+      <div class="item" data-type="call"><span class="dot" style="background:var(--call);"></span>Reuniões Clientes</div>
       <div class="item" data-type="evento"><span class="dot" style="background:var(--evento);"></span>Evento</div>
       <div class="item" data-type="captacao"><span class="dot" style="background:var(--captacao);"></span>Captação/Boleta</div>
       <div class="item" data-type="imprensa"><span class="dot" style="background:var(--imprensa);"></span>Imprensa</div>
@@ -258,7 +258,7 @@ body{
       <select id="filterMonth"></select>
       <select id="filterType">
         <option value="all">Todos os tipos</option>
-        <option value="call">Calls Cliente</option>
+        <option value="call">Reuniões Clientes</option>
         <option value="evento">Eventos</option>
         <option value="captacao">Captação/Boleta</option>
         <option value="imprensa">Imprensa</option>
@@ -284,7 +284,7 @@ function fmtDateLong(iso){
 }
 
 function typeLabel(t){
-  if(t === 'call') return 'Call Cliente';
+  if(t === 'call') return 'Reuniões Clientes';
   if(t === 'evento') return 'Evento';
   if(t === 'captacao') return 'Captação/Boleta';
   return 'Imprensa';
@@ -308,7 +308,7 @@ function renderSummaryMonth(){
   const currentFilter = document.getElementById('filterType').value;
   const el = document.getElementById('summaryMonth');
   el.innerHTML =
-    '<div class="cell call'+(currentFilter==='call'?' selected':'')+'" data-type="call"><div class="label">Calls Cliente (mês)</div><div class="value">'+counts.call+'</div></div>'+
+    '<div class="cell call'+(currentFilter==='call'?' selected':'')+'" data-type="call"><div class="label">Reuniões Clientes (mês)</div><div class="value">'+counts.call+'</div></div>'+
     '<div class="cell evento'+(currentFilter==='evento'?' selected':'')+'" data-type="evento"><div class="label">Eventos (mês)</div><div class="value">'+counts.evento+'</div></div>'+
     '<div class="cell captacao'+(currentFilter==='captacao'?' selected':'')+'" data-type="captacao"><div class="label">Captação/Boleta (mês)</div><div class="value">'+counts.captacao+'</div></div>'+
     '<div class="cell imprensa'+(currentFilter==='imprensa'?' selected':'')+'" data-type="imprensa"><div class="label">Imprensa (mês)</div><div class="value">'+counts.imprensa+'</div></div>';
@@ -402,7 +402,7 @@ function getMonthOptions(){
   return Array.from(set).sort().reverse();
 }
 
-const DEFAULT_MONTH = '2026-08';
+const DEFAULT_MONTH = '2026-09';
 
 function renderMonthFilter(){
   const sel = document.getElementById('filterMonth');

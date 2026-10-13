@@ -307,5 +307,127 @@
     "description": "Entrevista CNBC Brasil, Federal Reserve aumenta juros após 3 anos",
     "image": "assets/cnbc-fed-alta-juros.png",
     "createdAt": 3
+  },
+  {
+    "id": "e042",
+    "type": "evento",
+    "date": "2026-09-21",
+    "description": "Call Macro, cenário e produtos com equipe da Gamma",
+    "createdAt": 1
+  },
+  {
+    "id": "e043",
+    "type": "call",
+    "date": "2026-09-23",
+    "clientCode": "Geraldo Fortes e RGTech",
+    "description": "16h. Belo Horizonte, presencial",
+    "createdAt": 1
+  },
+  {
+    "id": "e044",
+    "type": "call",
+    "date": "2026-09-24",
+    "clientCode": "Guilherme e Marcelo Pedrosa (prospect)",
+    "description": "09h30. Belo Horizonte, presencial",
+    "createdAt": 1
+  },
+  {
+    "id": "e045",
+    "type": "call",
+    "date": "2026-09-24",
+    "clientCode": "Geraldo - Piscinas",
+    "description": "12h. Belo Horizonte, presencial",
+    "createdAt": 2
+  },
+  {
+    "id": "e046",
+    "type": "call",
+    "date": "2026-09-24",
+    "clientCode": "Alberto Alckimin",
+    "description": "16h. Belo Horizonte, presencial",
+    "createdAt": 3
+  },
+  {
+    "id": "e047",
+    "type": "call",
+    "date": "2026-09-24",
+    "clientCode": "Breno - Aquinum",
+    "description": "18h30. Belo Horizonte, presencial",
+    "createdAt": 4
+  },
+  {
+    "id": "e048",
+    "type": "call",
+    "date": "2026-09-25",
+    "clientCode": "Ernesto Liva",
+    "description": "09h. Belo Horizonte, presencial",
+    "createdAt": 1
+  },
+  {
+    "id": "e049",
+    "type": "call",
+    "date": "2026-09-25",
+    "clientCode": "Marina Lopes (prospect)",
+    "description": "13h. Belo Horizonte, presencial",
+    "createdAt": 2
+  },
+  {
+    "id": "e050",
+    "type": "evento",
+    "date": "2026-09-22",
+    "description": "16h. Call Macro com assessores da Gamma",
+    "createdAt": 1
+  },
+  {
+    "id": "e051",
+    "type": "imprensa",
+    "date": "2026-09-22",
+    "description": "Participação Closing da BM&C News",
+    "image": "assets/bmc-news-closing-22set.png",
+    "createdAt": 2
+  },
+  {
+    "id": "e052",
+    "type": "imprensa",
+    "date": "2026-09-28",
+    "description": "CNN Brasil Money. Fim de bets pode impactar ações de varejo, mas juros e risco jurídico pesam. https://www.cnnbrasil.com.br/economia/money/mercado/fim-de-bets-pode-impactar-acoes-de-varejo-mas-juros-e-risco-juridico-pesam/",
+    "createdAt": 1,
+    "image": "assets/cnn-brasil-fim-bets.png"
+  },
+  {
+    "id": "e053",
+    "type": "evento",
+    "date": "2026-10-05",
+    "description": "Call Empresa e colaboradores. Cenário Macro Pós Primeiro Turno",
+    "createdAt": 1
+  },
+  {
+    "id": "e054",
+    "type": "captacao",
+    "date": "2026-09-28",
+    "description": "Remessa de câmbio. Receita de R$ 7.479,67",
+    "createdAt": 3
+  },
+  {
+    "id": "e055",
+    "type": "call",
+    "date": "2026-10-08",
+    "clientCode": "Charbel 15624841",
+    "description": "",
+    "createdAt": 1
+  },
+  {
+    "id": "e056",
+    "type": "evento",
+    "date": "2026-10-05",
+    "description": "Call Macro Mensal com Equipe Gamma e clientes selecionados",
+    "createdAt": 2
+  },
+  {
+    "id": "e057",
+    "type": "evento",
+    "date": "2026-11-05",
+    "description": "Palestra Macro + Marcus Miranda. Vinícola Arpuro, em Uberaba-MG",
+    "createdAt": 1
   }
 ]
