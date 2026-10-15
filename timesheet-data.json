@@ -437,5 +437,13 @@
     "clientCode": "Ruth Goldberg (287788) + Marcus Miranda",
     "description": "",
     "createdAt": 1
+  },
+  {
+    "id": "e059",
+    "type": "call",
+    "date": "2026-10-15",
+    "clientCode": "Rachel Teixeira 2240579",
+    "description": "Assessor Alê, Alta Renda",
+    "createdAt": 2
   }
 ]
