@@ -399,7 +399,8 @@
     "type": "evento",
     "date": "2026-10-05",
     "description": "Call Empresa e colaboradores. Cenário Macro Pós Primeiro Turno",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/call-empresa-macro-pos-primeiro-turno.png"
   },
   {
     "id": "e054",
