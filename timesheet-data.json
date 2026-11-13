@@ -429,7 +429,8 @@
     "type": "evento",
     "date": "2026-11-05",
     "description": "Palestra Macro + Marcus Miranda. Vinícola Arpuro, em Uberaba-MG",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/palestra-macro-arpuro-uberaba.png"
   },
   {
     "id": "e058",
