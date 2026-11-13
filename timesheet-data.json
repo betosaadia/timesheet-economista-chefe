@@ -524,5 +524,12 @@
     "date": "2026-11-04",
     "description": "Estadão Online. Copom mantém Selic em 13,75% ao ano; veja como o mercado avalia a decisão (Luíza Lanza)",
     "createdAt": 1
+  },
+  {
+    "id": "e071",
+    "type": "imprensa",
+    "date": "2026-11-04",
+    "description": "InfoMoney. Selic a 13,75%: Sem ajuste fiscal, mercado vê juros travando a economia até 2027 (Élida Oliveira)",
+    "createdAt": 2
   }
 ]
