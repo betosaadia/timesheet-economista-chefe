@@ -531,5 +531,16 @@
     "date": "2026-11-04",
     "description": "InfoMoney. Selic a 13,75%: Sem ajuste fiscal, mercado vê juros travando a economia até 2027 (Élida Oliveira)",
     "createdAt": 2
+  },
+  {
+    "id": "e072",
+    "type": "imprensa",
+    "date": "2026-10-26",
+    "description": "Entrevista Money Times, republicada no BTG Pactual Content. Sinalização de ajuste fiscal será determinante para recuperação de ativos brasileiros, avalia economista-chefe da Nomos (Anna Scabello)",
+    "images": [
+      "assets/money-times-ajuste-fiscal.png",
+      "assets/btg-pactual-ajuste-fiscal.png"
+    ],
+    "createdAt": 2
   }
 ]
