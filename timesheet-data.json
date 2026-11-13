@@ -453,7 +453,8 @@
     "type": "evento",
     "date": "2026-10-28",
     "description": "Webinar O Brasil Pós Eleições",
-    "createdAt": 1
+    "createdAt": 1,
+    "image": "assets/webinar-novo-cenario-26out.png"
   },
   {
     "id": "e061",
