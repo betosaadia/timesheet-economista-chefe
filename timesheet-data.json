@@ -549,5 +549,13 @@
     ],
     "createdAt": 2,
     "excerpt": "O circuit breaker da Bolsa brasileira acaba de ser acionado pela 24ª vez desde sua criação, em 1997. O gatilho do acionamento foi a reeleição do presidente Luiz Inácio Lula da Silva (PT) para um quarto mandato. Para o economista-chefe da Nomos, Beto Saadia, o movimento não é uma reação “porque o mercado odeia o […]”"
+  },
+  {
+    "id": "e073",
+    "type": "evento",
+    "date": "2026-10-23",
+    "description": "WEBINAR Como se posicionar antes e depois das eleições",
+    "image": "assets/webinar-antes-depois-eleicoes.png",
+    "createdAt": 1
   }
 ]
