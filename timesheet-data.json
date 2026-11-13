@@ -459,5 +459,13 @@
     "date": "2026-10-26",
     "description": "Como se posicionar no novo cenário",
     "createdAt": 1
+  },
+  {
+    "id": "e062",
+    "type": "imprensa",
+    "date": "2026-11-11",
+    "description": "Jornal Hoje e outras inserções",
+    "image": "assets/jornal-hoje-11nov.png",
+    "createdAt": 1
   }
 ]
