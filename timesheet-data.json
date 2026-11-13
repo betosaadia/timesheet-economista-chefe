@@ -482,5 +482,12 @@
     "date": "2026-10-04",
     "description": "Plantão Equipe Tradenews Primeiro Turno",
     "createdAt": 1
+  },
+  {
+    "id": "e065",
+    "type": "evento",
+    "date": "2026-10-25",
+    "description": "Plantão Equipe Tradenews Segundo Turno",
+    "createdAt": 1
   }
 ]
