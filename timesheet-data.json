@@ -569,5 +569,12 @@
     "excerpt": "Beto Saadia, economista-chefe da Nomos Investimentos, diz que, diferente da bolsa, o Tesouro Direto não tem regras fixas de suspensão da negociação, e a interrupção no pregão acontece por uma determinação do próprio Tesouro. O objetivo é proteger o investidor de operar a preços que ficam defasados em questão de minutos.",
     "image": "assets/valor-investe-tesouro-vitoria-lula.png",
     "createdAt": 3
+  },
+  {
+    "id": "e075",
+    "type": "captacao",
+    "date": "2026-11-20",
+    "description": "Fred (55922). Valor 1,2 MM",
+    "createdAt": 1
   }
 ]
