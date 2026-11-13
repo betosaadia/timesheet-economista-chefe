@@ -559,5 +559,14 @@
     "description": "WEBINAR Como se posicionar antes e depois das eleições",
     "image": "assets/webinar-antes-depois-eleicoes.png",
     "createdAt": 1
+  },
+  {
+    "id": "e074",
+    "type": "imprensa",
+    "date": "2026-10-26",
+    "description": "Valor Investe. Tesouro Direto hoje: IPCA+ chega a romper 8% e prefixado beira 16% após vitória de Lula",
+    "excerpt": "Beto Saadia, economista-chefe da Nomos Investimentos, diz que, diferente da bolsa, o Tesouro Direto não tem regras fixas de suspensão da negociação, e a interrupção no pregão acontece por uma determinação do próprio Tesouro. O objetivo é proteger o investidor de operar a preços que ficam defasados em questão de minutos.",
+    "image": "assets/valor-investe-tesouro-vitoria-lula.png",
+    "createdAt": 3
   }
 ]
