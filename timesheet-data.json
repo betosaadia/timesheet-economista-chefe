@@ -467,5 +467,13 @@
     "description": "Jornal Hoje e outras inserções",
     "image": "assets/jornal-hoje-11nov.png",
     "createdAt": 1
+  },
+  {
+    "id": "e063",
+    "type": "call",
+    "date": "2026-11-13",
+    "clientCode": "Daniela",
+    "description": "Manhã. Uberaba",
+    "createdAt": 1
   }
 ]
