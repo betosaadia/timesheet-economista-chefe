@@ -402,7 +402,7 @@ function getMonthOptions(){
   return Array.from(set).sort().reverse();
 }
 
-const DEFAULT_MONTH = '2026-09';
+const DEFAULT_MONTH = '2026-10';
 
 function renderMonthFilter(){
   const sel = document.getElementById('filterMonth');
