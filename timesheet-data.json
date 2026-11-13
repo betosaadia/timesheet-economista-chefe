@@ -489,5 +489,33 @@
     "date": "2026-10-25",
     "description": "Plantão Equipe Tradenews Segundo Turno",
     "createdAt": 1
+  },
+  {
+    "id": "e066",
+    "type": "imprensa",
+    "date": "2026-10-13",
+    "description": "Valor Investe. Tesouro Direto: taxas sobem com pesquisas eleitorais e Focus acima do teto da meta",
+    "createdAt": 1
+  },
+  {
+    "id": "e067",
+    "type": "imprensa",
+    "date": "2026-10-02",
+    "description": "Investidor corre e turbina aposta em opções de EWZ na reta final das eleições; preço e contratos em aberto disparam (Anna Scabello)",
+    "createdAt": 1
+  },
+  {
+    "id": "e068",
+    "type": "imprensa",
+    "date": "2026-10-16",
+    "description": "Valor Investe. Tesouro Direto hoje: taxas voltam a subir e prefixado encosta nos 13% com cautela eleitoral",
+    "createdAt": 1
+  },
+  {
+    "id": "e069",
+    "type": "imprensa",
+    "date": "2026-10-24",
+    "description": "CNN Brasil. Mercado reforça 'seguro' contra volatilidade às vésperas do 2º turno",
+    "createdAt": 1
   }
 ]
