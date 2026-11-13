@@ -445,5 +445,19 @@
     "clientCode": "Rachel Teixeira 2240579",
     "description": "Assessor Alê, Alta Renda",
     "createdAt": 2
+  },
+  {
+    "id": "e060",
+    "type": "evento",
+    "date": "2026-10-28",
+    "description": "Webinar O Brasil Pós Eleições",
+    "createdAt": 1
+  },
+  {
+    "id": "e061",
+    "type": "evento",
+    "date": "2026-10-26",
+    "description": "Como se posicionar no novo cenário",
+    "createdAt": 1
   }
 ]
