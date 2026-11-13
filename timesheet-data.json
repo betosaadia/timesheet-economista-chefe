@@ -475,5 +475,12 @@
     "clientCode": "Daniela",
     "description": "Manhã. Uberaba",
     "createdAt": 1
+  },
+  {
+    "id": "e064",
+    "type": "evento",
+    "date": "2026-10-04",
+    "description": "Plantão Equipe Tradenews Primeiro Turno",
+    "createdAt": 1
   }
 ]
