@@ -200,6 +200,7 @@ body{
 .entry .meta{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--muted);margin-bottom:3px;}
 .entry .meta b{color:var(--text);}
 .entry .desc{font-size:13.5px;line-height:1.4;color:var(--text);}
+.entry .excerpt{font-size:12.5px;line-height:1.45;color:var(--muted);font-style:italic;margin-top:7px;padding-left:9px;border-left:2px solid var(--border);}
 
 .entry .thumbs{display:flex;gap:6px;flex-shrink:0;}
 .entry .thumb{
@@ -485,6 +486,7 @@ function renderLog(){
         '<div class="body">'+
           (metaHtml ? '<div class="meta">'+metaHtml+'</div>' : '')+
           '<div class="desc">'+(e.description ? escapeHtml(e.description) : '<span style="color:var(--muted)">sem observação</span>')+'</div>'+
+          (e.excerpt ? '<div class="excerpt">'+escapeHtml(e.excerpt)+'</div>' : '')+
         '</div>'+
         imagesHtml;
       group.appendChild(entryDiv);

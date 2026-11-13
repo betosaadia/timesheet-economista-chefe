@@ -495,42 +495,48 @@
     "type": "imprensa",
     "date": "2026-10-13",
     "description": "Valor Investe. Tesouro Direto: taxas sobem com pesquisas eleitorais e Focus acima do teto da meta",
-    "createdAt": 1
+    "createdAt": 1,
+    "excerpt": "Já a BTG/Nexus, também divulgada hoje, manteve cenário favorável a Flávio Bolsonaro, com 52% contra 48% de Lula. Segundo Beto Saadia, economista-chefe da Nomos Investimentos, houve exagero no fechamento de taxas (queda dos juros) visto na semana anterior. Ele pondera que o mercado agora calibra a perspectiva com a repercussão das manifestações pró-reeleição realizadas durante o feriado."
   },
   {
     "id": "e067",
     "type": "imprensa",
     "date": "2026-10-02",
     "description": "Investidor corre e turbina aposta em opções de EWZ na reta final das eleições; preço e contratos em aberto disparam (Anna Scabello)",
-    "createdAt": 1
+    "createdAt": 1,
+    "excerpt": "Segundo Beto Saadia, economista-chefe da Nomos, a volatilidade implícita desse contrato, com vencimento no fim de outubro, está atualmente em 59%. Para efeito de comparação, a média da volatilidade histórica, segundo dados levantados pelo economista, é de aproximadamente 23%. Ou seja: o preço das opções subiu bastante com o aumento da incerteza em torno das eleições."
   },
   {
     "id": "e068",
     "type": "imprensa",
     "date": "2026-10-16",
     "description": "Valor Investe. Tesouro Direto hoje: taxas voltam a subir e prefixado encosta nos 13% com cautela eleitoral",
-    "createdAt": 1
+    "createdAt": 1,
+    "excerpt": "O movimento na curva de juros reflete uma mudança de humor dos investidores em relação à euforia vista logo após o primeiro turno eleitoral. Na avaliação de Beto Saadia, economista-chefe da Nomos Investimentos, o mercado passa por um ajuste técnico e de reprecificação de risco."
   },
   {
     "id": "e069",
     "type": "imprensa",
     "date": "2026-10-24",
     "description": "CNN Brasil. Mercado reforça 'seguro' contra volatilidade às vésperas do 2º turno",
-    "createdAt": 1
+    "createdAt": 1,
+    "excerpt": "Uma das principais formas de compreender estes dados é pela ótica da razão put/call, que compara a quantidade de posições em aberto, explica Beto Saadia, economista-chefe da Nomos."
   },
   {
     "id": "e070",
     "type": "imprensa",
     "date": "2026-11-04",
     "description": "Estadão Online. Copom mantém Selic em 13,75% ao ano; veja como o mercado avalia a decisão (Luíza Lanza)",
-    "createdAt": 1
+    "createdAt": 1,
+    "excerpt": "“Se não houver uma sinalização de responsabilidade fiscal, podemos conviver com juros elevados nesse patamar por mais tempo.” Beto Saadia, economista-chefe da Nomos."
   },
   {
     "id": "e071",
     "type": "imprensa",
     "date": "2026-11-04",
     "description": "InfoMoney. Selic a 13,75%: Sem ajuste fiscal, mercado vê juros travando a economia até 2027 (Élida Oliveira)",
-    "createdAt": 2
+    "createdAt": 2,
+    "excerpt": "Beto Saadia, economista-chefe da Nomos, ressalta que o balanço de riscos agora possui uma “assimetria altista” explícita, incorporando a resiliência da inflação de serviços e o câmbio persistentemente depreciado."
   },
   {
     "id": "e072",
@@ -541,6 +547,7 @@
       "assets/money-times-ajuste-fiscal.png",
       "assets/btg-pactual-ajuste-fiscal.png"
     ],
-    "createdAt": 2
+    "createdAt": 2,
+    "excerpt": "O circuit breaker da Bolsa brasileira acaba de ser acionado pela 24ª vez desde sua criação, em 1997. O gatilho do acionamento foi a reeleição do presidente Luiz Inácio Lula da Silva (PT) para um quarto mandato. Para o economista-chefe da Nomos, Beto Saadia, o movimento não é uma reação “porque o mercado odeia o […]”"
   }
 ]
