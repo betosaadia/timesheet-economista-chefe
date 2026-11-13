@@ -517,5 +517,12 @@
     "date": "2026-10-24",
     "description": "CNN Brasil. Mercado reforça 'seguro' contra volatilidade às vésperas do 2º turno",
     "createdAt": 1
+  },
+  {
+    "id": "e070",
+    "type": "imprensa",
+    "date": "2026-11-04",
+    "description": "Estadão Online. Copom mantém Selic em 13,75% ao ano; veja como o mercado avalia a decisão (Luíza Lanza)",
+    "createdAt": 1
   }
 ]
