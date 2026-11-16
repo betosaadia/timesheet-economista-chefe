@@ -576,5 +576,13 @@
     "date": "2026-11-20",
     "description": "Fred (55922). Valor 1,2 MM",
     "createdAt": 1
+  },
+  {
+    "id": "e076",
+    "type": "call",
+    "date": "2026-11-16",
+    "clientCode": "Mariana 585461",
+    "description": "Call Macro e Alocação. Assessora Lari",
+    "createdAt": 1
   }
 ]
