@@ -584,5 +584,21 @@
     "clientCode": "Mariana 585461",
     "description": "Call Macro e Alocação. Assessora Lari",
     "createdAt": 1
+  },
+  {
+    "id": "e077",
+    "type": "call",
+    "date": "2026-11-18",
+    "clientCode": "Modulo Capital",
+    "description": "Almoço e visita. Escritório querendo se tornar wealth",
+    "createdAt": 1
+  },
+  {
+    "id": "e078",
+    "type": "evento",
+    "date": "2026-11-18",
+    "description": "Webinar Como Investir Pós Eleições Com Max",
+    "image": "assets/webinar-investir-pos-eleicoes-18nov.png",
+    "createdAt": 2
   }
 ]
