@@ -600,5 +600,12 @@
     "description": "Webinar Como Investir Pós Eleições Com Max",
     "image": "assets/webinar-investir-pos-eleicoes-18nov.png",
     "createdAt": 2
+  },
+  {
+    "id": "e079",
+    "type": "captacao",
+    "date": "2026-11-24",
+    "description": "Portabilidade Mauro Molchansky. Valor R$ 844.967,17",
+    "createdAt": 1
   }
 ]
